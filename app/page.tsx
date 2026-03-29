@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { DataSwarm } from "@/components/data-swarm";
 
 const sampleQuestions = [
   "Why did my traffic drop last week?",
@@ -448,6 +449,46 @@ export default function HomePage() {
               <AnimatedCounter key={s.label} value={s.value} label={s.label} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── DATA SWARM ───────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-bark">
+        {/* Top fade */}
+        <div className="absolute top-0 left-0 right-0 h-16 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, #2A1F14, transparent)" }} />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to top, #2A1F14, transparent)" }} />
+
+        {/* Label overlay */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-between pointer-events-none py-10">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-parchment/30 mb-1">
+              What Crutan does
+            </p>
+            <p
+              className="text-xl sm:text-2xl font-bold text-parchment/60"
+              style={{ fontFamily: "var(--font-fraunces)" }}
+            >
+              Chaos
+            </p>
+          </div>
+          <div className="text-center">
+            <p
+              className="text-xl sm:text-2xl font-bold text-parchment/90"
+              style={{ fontFamily: "var(--font-fraunces)" }}
+            >
+              Clarity
+            </p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-parchment/30 mt-1">
+              Every morning
+            </p>
+          </div>
+        </div>
+
+        <div className="opacity-90">
+          <DataSwarm />
         </div>
       </section>
 
