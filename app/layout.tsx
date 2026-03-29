@@ -18,16 +18,16 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Crutan — Wake up to clarity, not confusion.",
+  title: "Crutan — AI Analytics Briefings for Non-Technical Business Owners",
   description:
-    "Connect your Google Analytics 4 account and wake up every morning to an AI-written briefing that tells you what happened, what matters, and what to do — delivered to your inbox or phone.",
+    "Google Analytics made simple. Crutan connects to your GA4 account and delivers a plain-English AI briefing every morning — telling you what happened, what it means, and what to do. Free during early access.",
   keywords: [
-    "Google Analytics",
-    "GA4",
-    "AI analytics",
-    "daily briefing",
-    "analytics report",
-    "marketing analytics",
+    "AI analytics for small business",
+    "Google Analytics made simple",
+    "GA4 daily briefing",
+    "analytics for non-technical founders",
+    "automated analytics report",
+    "GA4 AI summary",
   ],
   icons: {
     icon: [
@@ -46,18 +46,18 @@ export const metadata: Metadata = {
     apple: "/crutan-symbol-brown.svg",
   },
   openGraph: {
-    title: "Crutan — Wake up to clarity, not confusion.",
+    title: "Crutan — AI Analytics Briefings for Non-Technical Business Owners",
     description:
-      "AI-powered daily analytics briefings for business owners and operators. Connect GA4, get plain-English reports every morning.",
+      "Google Analytics made simple. Plain-English AI briefings delivered to your inbox every morning. Free during early access.",
     type: "website",
     url: "https://crutan.com",
     siteName: "Crutan",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crutan — Wake up to clarity, not confusion.",
+    title: "Crutan — AI Analytics Briefings for Non-Technical Business Owners",
     description:
-      "AI-powered daily analytics briefings for business owners and operators.",
+      "Google Analytics made simple. Plain-English AI briefings to your inbox every morning. Free during early access.",
   },
   metadataBase: new URL("https://crutan.com"),
 };

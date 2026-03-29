@@ -210,7 +210,7 @@ export default function HomePage() {
 
   const handleQuestionSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "https://app.crutan.com/login";
+    window.location.href = "/signup";
   };
 
   const handleQuestionKeyDown = (e: React.KeyboardEvent) => {
@@ -237,10 +237,11 @@ export default function HomePage() {
         <div className="grid-texture absolute inset-0 pointer-events-none" />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Pill badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-action/20 bg-action/5 text-action text-xs font-semibold mb-8">
-            <Sparkles className="w-3 h-3" />
-            <span>Now in early access — free to join</span>
+
+          {/* Fix #4 — Prominent early access badge with pulsing green dot */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-sage/10 border border-sage/25 text-sage text-sm font-semibold mb-8 shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-sage animate-pulse flex-shrink-0" />
+            Free during early access — no credit card required
           </div>
 
           {/* Headline */}
@@ -253,15 +254,19 @@ export default function HomePage() {
             <span className="text-shimmer">not confusion.</span>
           </h1>
 
-          {/* Subheadline */}
+          {/* Fix #2 — Lead with benefit, not with "connect GA4" */}
           <p className="text-lg sm:text-xl text-weathered max-w-2xl mx-auto mb-10 leading-relaxed">
-            Connect your Google Analytics 4 account, tell Crutan about your
-            business, and wake up every morning to an AI-written briefing that
-            explains what happened, what it means, and what to do.
+            Every morning, Crutan analyses your website overnight and delivers
+            a plain-English briefing to your inbox — telling you exactly what
+            happened, what it means, and what to do next. No dashboards. No
+            data science. Just answers.
           </p>
 
-          {/* Question → Signup input */}
-          <form onSubmit={handleQuestionSubmit} className="mb-6">
+          {/* Fix #5 — Labelled search input to clarify the interaction */}
+          <p className="text-xs font-semibold uppercase tracking-widest text-weathered mb-3">
+            Try asking Crutan a question:
+          </p>
+          <form onSubmit={handleQuestionSubmit} className="mb-5">
             <div className="relative max-w-2xl mx-auto">
               <div className="relative flex items-center bg-white border-2 border-sand rounded-xl shadow-sm hover:border-action/40 focus-within:border-action transition-all duration-200 overflow-hidden">
                 <MessageSquare className="absolute left-4 w-5 h-5 text-sand flex-shrink-0" />
@@ -291,20 +296,19 @@ export default function HomePage() {
             </div>
           </form>
 
-          <p className="text-xs text-weathered mb-12">
-            Type a question and hit enter → sign up free → connect GA4 → get
-            your first briefing tomorrow morning
+          <p className="text-xs text-weathered mb-10">
+            Type any question → sign up free → connect GA4 → your first briefing arrives tomorrow morning
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="https://app.crutan.com/login"
+          {/* Fix #1 — Primary CTA goes to /signup, secondary to sign in */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+            <Link
+              href="/signup"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-all duration-200 shadow-md hover:shadow-lg text-base"
             >
               Get early access free
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
             <Link
               href="/#how-it-works"
               className="inline-flex items-center gap-2 px-6 py-3.5 text-bark font-medium rounded-xl border border-sand hover:border-action/30 hover:bg-parchment-surface transition-all duration-200 text-base"
@@ -312,6 +316,37 @@ export default function HomePage() {
               See how it works
               <ChevronRight className="w-4 h-4" />
             </Link>
+          </div>
+
+          {/* Fix #3 — Social proof trust bar above the fold */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <div className="flex items-center gap-2">
+              {/* Avatar stack */}
+              <div className="flex -space-x-2">
+                {["SC","MW","PN","JT"].map((initials) => (
+                  <div
+                    key={initials}
+                    className="w-7 h-7 rounded-full bg-action/10 border-2 border-parchment flex items-center justify-center text-[9px] font-bold text-action"
+                  >
+                    {initials}
+                  </div>
+                ))}
+              </div>
+              <span className="text-sm text-weathered font-medium">
+                Joined by <span className="text-bark font-semibold">200+ founders</span> in early access
+              </span>
+            </div>
+            <div className="hidden sm:block w-px h-4 bg-sand" />
+            <div className="flex items-center gap-1.5">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-3.5 h-3.5 fill-saffron text-saffron" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <span className="text-sm text-weathered ml-1">
+                &ldquo;Like having an analyst on staff.&rdquo;
+              </span>
+            </div>
           </div>
         </div>
 
@@ -527,13 +562,13 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-14">
-            <a
-              href="https://app.crutan.com/login"
+            <Link
+              href="/signup"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Start setup — it&apos;s free
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -573,12 +608,12 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="https://app.crutan.com/login"
+              <Link
+                href="/signup"
                 className="inline-flex items-center gap-2 text-action font-semibold text-sm hover:gap-3 transition-all"
               >
                 Try it with your data <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
 
             {/* Chat mockup */}
@@ -653,13 +688,13 @@ export default function HomePage() {
                     className="flex-1 text-xs bg-transparent outline-none text-bark placeholder:text-sand"
                     readOnly
                     onClick={() =>
-                      (window.location.href = "https://app.crutan.com/login")
+                      (window.location.href = "/signup")
                     }
                   />
                   <button
                     className="p-1.5 bg-action text-parchment rounded-lg"
                     onClick={() =>
-                      (window.location.href = "https://app.crutan.com/login")
+                      (window.location.href = "/signup")
                     }
                   >
                     <Send className="w-3 h-3" />
@@ -766,13 +801,13 @@ export default function HomePage() {
             finalize our pricing.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="https://app.crutan.com/login"
+            <Link
+              href="/signup"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Join free — no card needed
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
             <Link
               href="/pricing"
               className="inline-flex items-center gap-2 text-sm font-medium text-action hover:text-action-light transition-colors"
@@ -813,13 +848,13 @@ export default function HomePage() {
             Connect your GA4 in under 5 minutes. Tell Crutan about your
             business. Wake up tomorrow to a briefing written just for you.
           </p>
-          <a
-            href="https://app.crutan.com/login"
+          <Link
+            href="/signup"
             className="inline-flex items-center gap-2 px-8 py-4 bg-parchment text-bark font-bold rounded-xl hover:bg-parchment-surface transition-all duration-200 shadow-xl text-base"
           >
             Get early access — it&apos;s free
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
           <p className="mt-5 text-xs text-parchment/40">
             Sign in with Google · Read-only access · Cancel anytime
           </p>

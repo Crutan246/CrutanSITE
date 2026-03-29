@@ -67,7 +67,7 @@ export function Nav() {
               Sign in
             </a>
             <a
-              href="https://app.crutan.com/login"
+              href="/signup"
               className="inline-flex items-center gap-1.5 px-4 py-2 bg-action text-parchment text-sm font-semibold rounded-lg hover:bg-action-light transition-all duration-200 shadow-sm hover:shadow-md"
             >
               Get early access
@@ -107,7 +107,7 @@ export function Nav() {
                   Sign in
                 </a>
                 <a
-                  href="https://app.crutan.com/login"
+                  href="/signup"
                   className="flex items-center justify-center gap-1.5 py-3 bg-action text-parchment text-sm font-semibold rounded-lg hover:bg-action-light transition-colors"
                 >
                   Get early access
