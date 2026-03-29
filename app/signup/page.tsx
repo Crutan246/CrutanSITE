@@ -115,9 +115,8 @@ export default function SignupPage() {
                 {/* Google OAuth button */}
                 <a
                   href="https://app.crutan.com/login"
-                  className="flex items-center justify-center gap-3 w-full py-3.5 px-5 bg-bark text-parchment font-semibold rounded-xl hover:bg-bark/90 transition-colors text-sm shadow-sm mb-4"
+                  className="flex items-center justify-center gap-3 w-full py-3.5 px-5 bg-bark text-parchment font-semibold rounded-xl hover:bg-bark/90 transition-colors text-sm shadow-sm"
                 >
-                  {/* Google G icon */}
                   <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -137,19 +136,6 @@ export default function SignupPage() {
                     />
                   </svg>
                   Continue with Google
-                </a>
-
-                <div className="relative flex items-center gap-3 my-5">
-                  <div className="flex-1 h-px bg-sand/60" />
-                  <span className="text-xs text-weathered">or</span>
-                  <div className="flex-1 h-px bg-sand/60" />
-                </div>
-
-                <a
-                  href="https://app.crutan.com/login"
-                  className="flex items-center justify-center gap-3 w-full py-3.5 px-5 bg-parchment text-bark font-medium rounded-xl border border-sand hover:border-action/30 hover:bg-parchment-surface transition-colors text-sm"
-                >
-                  Sign in with email
                 </a>
               </div>
 
