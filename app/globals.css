@@ -1,26 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Tailwind v4 Theme ─────────────────────────────────────────────────── */
+@theme {
+  /* Surfaces & backgrounds */
+  --color-parchment: #f5f0e8;
+  --color-parchment-surface: #ede8df;
+  --color-parchment-raised: #e8e5df;
+  --color-sand: #cec3b2;
+  --color-sand-subtle: #ddd8d0;
+
+  /* Text & foreground */
+  --color-bark: #2a1f14;
+  --color-weathered: #7a6a58;
+  --color-bark-muted: #5a6672;
+  --color-loam: #5c4a32;
+  --color-driftwood: #8b6f52;
+
+  /* Brand & interactive */
+  --color-action: #3d5a73;
+  --color-action-light: #6b8fa8;
+  --color-saffron: #c4822d;
+  --color-saffron-muted: #e8c49a;
+
+  /* Semantic */
+  --color-sage: #517a58;
+  --color-sage-muted: #a8c5ad;
+  --color-ember: #b85238;
+  --color-ember-muted: #e8b5a5;
+  --color-caution: #c49a2a;
+
+  /* Typography */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.75rem;
+
+  /* Animations */
+  --animate-blob: blob 8s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 4s linear infinite;
+  --animate-fade-up: fadeUp 0.6s ease-out forwards;
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Keyframes ──────────────────────────────────────────────────────────── */
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f0e8;
+  color: #2a1f14;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cec3b2;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b6f52;
+}
+
+::selection {
+  background-color: #e8c49a;
+  color: #2a1f14;
+}
+
+:focus-visible {
+  outline: 2px solid #3d5a73;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Utility classes ────────────────────────────────────────────────────── */
+
+/* Text shimmer gradient */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #2a1f14 0%,
+    #3d5a73 25%,
+    #c4822d 50%,
+    #3d5a73 75%,
+    #2a1f14 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Hero gradient mesh */
+.hero-mesh {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 20% 40%,
+      rgba(61, 90, 115, 0.07) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 80% 20%,
+      rgba(196, 130, 45, 0.05) 0%,
+      transparent 60%
+    );
+}
+
+/* Dot-grid texture */
+.grid-texture {
+  background-image: radial-gradient(
+    circle,
+    rgba(42, 31, 20, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(42, 31, 20, 0.1);
+}
+
+/* Blob animation helpers */
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ─── Prose (blog) ───────────────────────────────────────────────────────── */
+.prose-crutan h2,
+.prose-crutan h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #2a1f14;
+}
+
+.prose-crutan p {
+  color: #5c4a32;
+  line-height: 1.8;
+}
+
+.prose-crutan a {
+  color: #3d5a73;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-crutan strong {
+  color: #2a1f14;
+  font-weight: 600;
+}
+
+.prose-crutan code {
+  font-family: "SF Mono", "Fira Code", Consolas, monospace;
+  background: #ede8df;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+.prose-crutan blockquote {
+  border-left: 3px solid #c4822d;
+  padding-left: 1rem;
+  color: #7a6a58;
+  font-style: italic;
 }
