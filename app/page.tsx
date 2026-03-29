@@ -226,14 +226,17 @@ export default function HomePage() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative pt-28 pb-24 sm:pt-36 sm:pb-32 overflow-hidden hero-mesh">
-        {/* Background blobs */}
+        {/* Data swarm — transparent ambient background layer */}
+        <DataSwarm />
+
+        {/* Soft radial gradient blobs (sit above swarm, below content) */}
         <div
-          className="absolute top-20 left-1/4 w-72 h-72 opacity-20 animate-blob"
-          style={{ background: "var(--action)", filter: "blur(80px)" }}
+          className="absolute top-20 left-1/4 w-72 h-72 opacity-10 animate-blob pointer-events-none"
+          style={{ background: "var(--action)", filter: "blur(90px)" }}
         />
         <div
-          className="absolute bottom-20 right-1/4 w-96 h-96 opacity-10 animate-blob animation-delay-2000"
-          style={{ background: "var(--saffron)", filter: "blur(100px)" }}
+          className="absolute bottom-20 right-1/4 w-96 h-96 opacity-8 animate-blob animation-delay-2000 pointer-events-none"
+          style={{ background: "var(--saffron)", filter: "blur(110px)" }}
         />
         <div className="grid-texture absolute inset-0 pointer-events-none" />
 
@@ -449,46 +452,6 @@ export default function HomePage() {
               <AnimatedCounter key={s.label} value={s.value} label={s.label} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── DATA SWARM ───────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-bark">
-        {/* Top fade */}
-        <div className="absolute top-0 left-0 right-0 h-16 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, #2A1F14, transparent)" }} />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to top, #2A1F14, transparent)" }} />
-
-        {/* Label overlay */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-between pointer-events-none py-10">
-          <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-parchment/30 mb-1">
-              What Crutan does
-            </p>
-            <p
-              className="text-xl sm:text-2xl font-bold text-parchment/60"
-              style={{ fontFamily: "var(--font-fraunces)" }}
-            >
-              Chaos
-            </p>
-          </div>
-          <div className="text-center">
-            <p
-              className="text-xl sm:text-2xl font-bold text-parchment/90"
-              style={{ fontFamily: "var(--font-fraunces)" }}
-            >
-              Clarity
-            </p>
-            <p className="text-xs font-semibold uppercase tracking-widest text-parchment/30 mt-1">
-              Every morning
-            </p>
-          </div>
-        </div>
-
-        <div className="opacity-90">
-          <DataSwarm />
         </div>
       </section>
 
