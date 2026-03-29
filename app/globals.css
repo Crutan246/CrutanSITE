@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
-
 @import "tailwindcss";
 
 /* ─── Tailwind v4 Theme ─────────────────────────────────────────────────── */
@@ -31,9 +29,9 @@
   --color-ember-muted: #e8b5a5;
   --color-caution: #c49a2a;
 
-  /* Typography */
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  /* Typography — references CSS vars injected by next/font on <html> */
+  --font-display: var(--font-fraunces, "Fraunces", Georgia, serif);
+  --font-sans: var(--font-jakarta, "Plus Jakarta Sans", system-ui, sans-serif);
   --font-mono: "SF Mono", "Fira Code", Consolas, monospace;
 
   /* Border radius */
@@ -114,14 +112,14 @@ html {
 body {
   background-color: #f5f0e8;
   color: #2a1f14;
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-family: var(--font-jakarta, "Plus Jakarta Sans", system-ui, sans-serif);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-fraunces, "Fraunces", Georgia, serif);
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
@@ -226,7 +224,7 @@ h4 {
 /* ─── Prose (blog) ───────────────────────────────────────────────────────── */
 .prose-crutan h2,
 .prose-crutan h3 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-fraunces, "Fraunces", Georgia, serif);
   color: #2a1f14;
 }
 
