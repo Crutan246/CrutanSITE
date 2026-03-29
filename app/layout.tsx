@@ -13,6 +13,22 @@ export const metadata: Metadata = {
     "analytics report",
     "marketing analytics",
   ],
+  icons: {
+    icon: [
+      {
+        url: "/crutan-symbol-brown.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/crutan-symbol-tan.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    shortcut: "/crutan-symbol-brown.svg",
+    apple: "/crutan-symbol-brown.svg",
+  },
   openGraph: {
     title: "Crutan — Wake up to clarity, not confusion.",
     description:
