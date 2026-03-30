@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { track } from "@/lib/gtm";
+import { useScrollDepth } from "@/hooks/use-scroll-depth";
 
 const faqItems = [
   {
@@ -69,7 +71,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-sand/60 last:border-0">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => { if (!open) track({ event: "faq_open", question: q }); setOpen(!open); }}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
         <span className="text-sm font-semibold text-bark">{q}</span>
@@ -87,6 +89,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function PricingPage() {
+  useScrollDepth();
   return (
     <div className="min-h-screen bg-parchment">
       <Nav />
@@ -149,6 +152,7 @@ export default function PricingPage() {
 
               <a
                 href="https://app.crutan.com/login"
+                onClick={() => track({ event: "pricing_cta_click", cta_text: "Get early access free", plan: "early_access" })}
                 className="flex items-center justify-center gap-2 w-full py-3.5 bg-parchment text-bark font-bold rounded-xl hover:bg-parchment-surface transition-colors text-sm"
               >
                 Get early access free
@@ -282,6 +286,7 @@ export default function PricingPage() {
           </p>
           <a
             href="https://app.crutan.com/login"
+            onClick={() => track({ event: "pricing_cta_click", cta_text: "Get early access", plan: "early_access" })}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-colors shadow-md hover:shadow-lg"
           >
             Get early access

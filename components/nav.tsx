@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { track } from "@/lib/gtm";
 
 const navLinks = [
   { label: "Features", href: "/#features" },
@@ -51,6 +52,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => track({ event: "nav_click", link_text: link.label, link_href: link.href })}
                 className="px-3 py-2 text-sm font-medium text-weathered hover:text-bark rounded-lg hover:bg-parchment-surface transition-all duration-150"
               >
                 {link.label}
@@ -62,12 +64,14 @@ export function Nav() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="https://app.crutan.com/login"
+              onClick={() => track({ event: "sign_in_click", location: "nav_desktop" })}
               className="text-sm font-medium text-action hover:text-action-light transition-colors"
             >
               Sign in
             </a>
             <a
               href="/signup"
+              onClick={() => track({ event: "cta_click", cta_text: "Get early access", cta_location: "nav_desktop", destination: "/signup" })}
               className="inline-flex items-center gap-1.5 px-4 py-2 bg-action text-parchment text-sm font-semibold rounded-lg hover:bg-action-light transition-all duration-200 shadow-sm hover:shadow-md"
             >
               Get early access
@@ -93,7 +97,7 @@ export function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => { setMenuOpen(false); track({ event: "nav_click", link_text: link.label, link_href: link.href }); }}
                   className="px-4 py-3 text-sm font-medium text-weathered hover:text-bark hover:bg-parchment-surface rounded-lg transition-colors"
                 >
                   {link.label}
@@ -102,12 +106,14 @@ export function Nav() {
               <div className="mt-2 pt-4 border-t border-sand/40 flex flex-col gap-2 px-4">
                 <a
                   href="https://app.crutan.com/login"
+                  onClick={() => track({ event: "sign_in_click", location: "nav_mobile" })}
                   className="text-center py-3 text-sm font-medium text-action border border-action/30 rounded-lg hover:bg-action/5 transition-colors"
                 >
                   Sign in
                 </a>
                 <a
                   href="/signup"
+                  onClick={() => track({ event: "cta_click", cta_text: "Get early access", cta_location: "nav_mobile", destination: "/signup" })}
                   className="flex items-center justify-center gap-1.5 py-3 bg-action text-parchment text-sm font-semibold rounded-lg hover:bg-action-light transition-colors"
                 >
                   Get early access

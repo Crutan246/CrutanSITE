@@ -23,6 +23,8 @@ import {
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { DataSwarm } from "@/components/data-swarm";
+import { track } from "@/lib/gtm";
+import { useScrollDepth } from "@/hooks/use-scroll-depth";
 
 const sampleQuestions = [
   "Why did my traffic drop last week?",
@@ -208,9 +210,11 @@ function TypewriterPlaceholder() {
 export default function HomePage() {
   const [question, setQuestion] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  useScrollDepth();
 
   const handleQuestionSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    track({ event: "hero_search_submit", query_text: question.trim() || "(placeholder click)" });
     window.location.href = "/signup";
   };
 
@@ -308,6 +312,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
             <Link
               href="/signup"
+              onClick={() => track({ event: "cta_click", cta_text: "Get early access free", cta_location: "hero_primary", destination: "/signup" })}
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-all duration-200 shadow-md hover:shadow-lg text-base"
             >
               Get early access free
@@ -315,6 +320,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/#how-it-works"
+              onClick={() => track({ event: "nav_click", link_text: "See how it works", link_href: "/#how-it-works" })}
               className="inline-flex items-center gap-2 px-6 py-3.5 text-bark font-medium rounded-xl border border-sand hover:border-action/30 hover:bg-parchment-surface transition-all duration-200 text-base"
             >
               See how it works
@@ -854,6 +860,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/signup"
+            onClick={() => track({ event: "cta_click", cta_text: "Get early access — it's free", cta_location: "homepage_bottom_cta", destination: "/signup" })}
             className="inline-flex items-center gap-2 px-8 py-4 bg-parchment text-bark font-bold rounded-xl hover:bg-parchment-surface transition-all duration-200 shadow-xl text-base"
           >
             Get early access — it&apos;s free

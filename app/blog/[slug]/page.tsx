@@ -4,6 +4,8 @@ import { ArrowLeft, Clock, ArrowRight, BookOpen } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { BlogPostTracker } from "@/components/blog-post-tracker";
+import { SignupButton } from "@/components/signup-button";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -131,6 +133,7 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-parchment">
+      <BlogPostTracker postTitle={post.title} postSlug={post.slug} postCategory={post.category} />
       <Nav />
 
       <article className="pt-28 pb-20 sm:pt-36">
@@ -205,13 +208,7 @@ export default async function BlogPostPage({
             Connect your GA4 and wake up tomorrow to an AI briefing that does
             all of this for you — every morning.
           </p>
-          <a
-            href="https://app.crutan.com/login"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-parchment text-bark font-semibold rounded-xl hover:bg-parchment-surface transition-colors text-sm"
-          >
-            Get early access free
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <SignupButton location="blog_article_cta" />
         </div>
       </div>
 
