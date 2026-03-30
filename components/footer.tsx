@@ -47,7 +47,7 @@ export function Footer() {
               for founders and operators.
             </p>
             <a
-              href="https://app.crutan.com/login"
+              href="https://app.crutan.com/signup"
               className="inline-flex items-center px-5 py-2.5 bg-action text-parchment text-sm font-semibold rounded-lg hover:bg-action-light transition-colors"
             >
               Get early access →

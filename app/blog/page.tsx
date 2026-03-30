@@ -178,7 +178,7 @@ export default function BlogPage() {
             Connect your GA4 and get your first AI briefing tomorrow morning.
           </p>
           <a
-            href="https://app.crutan.com/login"
+            href="https://app.crutan.com/signup"
             className="inline-flex items-center gap-2 px-6 py-3 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-colors text-sm"
           >
             Get early access free

@@ -279,7 +279,7 @@ export default function ResourcesPage() {
             Every morning. In your inbox.
           </p>
           <a
-            href="https://app.crutan.com/login"
+            href="https://app.crutan.com/signup"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-parchment text-bark font-bold rounded-xl hover:bg-parchment-surface transition-colors"
           >
             Get early access free

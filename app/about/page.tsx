@@ -259,7 +259,7 @@ export default function AboutPage() {
             Early access is free. No credit card. Setup takes under 5 minutes.
           </p>
           <a
-            href="https://app.crutan.com/login"
+            href="https://app.crutan.com/signup"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-colors shadow-md"
           >
             Get started free

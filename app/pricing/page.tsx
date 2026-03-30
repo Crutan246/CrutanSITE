@@ -151,7 +151,7 @@ export default function PricingPage() {
               </ul>
 
               <a
-                href="https://app.crutan.com/login"
+                href="https://app.crutan.com/signup"
                 onClick={() => track({ event: "pricing_cta_click", cta_text: "Get early access free", plan: "early_access" })}
                 className="flex items-center justify-center gap-2 w-full py-3.5 bg-parchment text-bark font-bold rounded-xl hover:bg-parchment-surface transition-colors text-sm"
               >
@@ -285,7 +285,7 @@ export default function PricingPage() {
             morning.
           </p>
           <a
-            href="https://app.crutan.com/login"
+            href="https://app.crutan.com/signup"
             onClick={() => track({ event: "pricing_cta_click", cta_text: "Get early access", plan: "early_access" })}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-action text-parchment font-semibold rounded-xl hover:bg-action-light transition-colors shadow-md hover:shadow-lg"
           >

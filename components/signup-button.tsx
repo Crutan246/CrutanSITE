@@ -9,7 +9,7 @@ interface Props {
 export function SignupButton({ location = "signup_page" }: Props) {
   return (
     <a
-      href="https://app.crutan.com/login"
+      href="https://app.crutan.com/signup"
       onClick={() => track({ event: "google_auth_click", location })}
       className="flex items-center justify-center gap-3 w-full py-3.5 px-5 bg-bark text-parchment font-semibold rounded-xl hover:bg-bark/90 transition-colors text-sm shadow-sm"
     >
