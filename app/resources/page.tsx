@@ -8,6 +8,12 @@ import {
   ArrowRight,
   ExternalLink,
   Search,
+  TrendingUp,
+  Mail,
+  Globe,
+  Zap,
+  Target,
+  LineChart,
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -53,6 +59,106 @@ const guides = [
     href: "/blog/why-ga4-is-hard",
     internal: true,
   },
+  {
+    icon: Mail,
+    category: "Campaign Tracking",
+    title: "UTM Parameters: The Founder's Guide to Campaign Tracking",
+    description:
+      "If you're running ads, sending emails, or posting on social without UTM parameters, you're flying blind. Here's exactly how to use them and what to do with the data in GA4.",
+    readTime: "7 min",
+    href: "/blog/utm-parameters-guide",
+    internal: true,
+  },
+  {
+    icon: BarChart3,
+    category: "GA4 Fundamentals",
+    title: "Sessions, Users, Active Users: What GA4 Is Actually Telling You",
+    description:
+      "GA4 uses 'users' and 'active users' interchangeably in some reports and 'sessions' mean something slightly different. Clear up the confusion with this plain-English breakdown.",
+    readTime: "6 min",
+    href: "/blog/ga4-sessions-users-explained",
+    internal: true,
+  },
+  {
+    icon: Target,
+    category: "Conversion Optimisation",
+    title: "What Is a Good Conversion Rate? Industry Benchmarks for 2026",
+    description:
+      "Conversion benchmarks vary wildly by industry, traffic source, and what you're measuring. Here's how to set meaningful targets without comparing apples to oranges.",
+    readTime: "8 min",
+    href: "/blog/conversion-rate-benchmarks",
+    internal: true,
+  },
+  {
+    icon: LineChart,
+    category: "Analytics Routines",
+    title: "The Friday Analytics Review: 15 Minutes That Change Your Week",
+    description:
+      "A weekly review habit turns analytics from a reactive fire alarm into a strategic compass. Here's a 15-minute Friday ritual that actually works.",
+    readTime: "5 min",
+    href: "/blog/weekly-analytics-review",
+    internal: true,
+  },
+  {
+    icon: Globe,
+    category: "Traffic Sources",
+    title: "Direct, Organic, Referral, Paid: What Your Traffic Sources Are Really Telling You",
+    description:
+      "Each traffic source carries a different intent signal and conversion pattern. Learn what each channel means and how to interpret changes in them.",
+    readTime: "7 min",
+    href: "/blog/understanding-traffic-sources",
+    internal: true,
+  },
+  {
+    icon: Zap,
+    category: "SEO",
+    title: "Core Web Vitals Explained: What They Are and Why They Affect Rankings",
+    description:
+      "LCP, INP, and CLS are Google ranking factors. Here's what each metric measures, what good scores look like, and how to diagnose problems on your site.",
+    readTime: "8 min",
+    href: "/blog/core-web-vitals-explained",
+    internal: true,
+  },
+  {
+    icon: TrendingUp,
+    category: "GA4 Fundamentals",
+    title: "How to Read Your GA4 Acquisition Report Without Getting Lost",
+    description:
+      "The Acquisition report is the most important report in GA4. User Acquisition vs Traffic Acquisition, which dimensions to use, and which numbers actually matter.",
+    readTime: "7 min",
+    href: "/blog/ga4-acquisition-report",
+    internal: true,
+  },
+  {
+    icon: FileText,
+    category: "Content Strategy",
+    title: "How to Know Which Blog Posts Actually Drive Business Results",
+    description:
+      "Most content analytics stops at pageviews. Here's how to connect your content to signups, sales, and revenue-driving actions in GA4 — and run a monthly content audit.",
+    readTime: "6 min",
+    href: "/blog/content-performance-tracking",
+    internal: true,
+  },
+  {
+    icon: Mail,
+    category: "Email Analytics",
+    title: "How to Track Email Newsletter Performance in GA4",
+    description:
+      "Open rates don't tell you what subscribers do after they click. Here's how to close the loop between your email platform and GA4 using UTMs and conversion tracking.",
+    readTime: "6 min",
+    href: "/blog/email-analytics-ga4",
+    internal: true,
+  },
+  {
+    icon: Target,
+    category: "Conversion Optimisation",
+    title: "Using GA4 Data to Improve Your Landing Pages",
+    description:
+      "Landing page optimisation without data is just opinion. Learn how to use GA4's Landing Pages report, Path Exploration, and scroll data to diagnose exactly what's underperforming.",
+    readTime: "7 min",
+    href: "/blog/landing-page-optimization",
+    internal: true,
+  },
 ];
 
 const externalLinks = [
@@ -74,6 +180,11 @@ const externalLinks = [
         url: "https://support.google.com/analytics/answer/9267735",
         description: "Recommended and automatically collected events in GA4",
       },
+      {
+        title: "GA4 Attribution Settings",
+        url: "https://support.google.com/analytics/answer/10597962",
+        description: "How to configure data-driven and last-click attribution in GA4",
+      },
     ],
   },
   {
@@ -88,6 +199,36 @@ const externalLinks = [
         title: "GA4 Setup Checklist",
         url: "https://support.google.com/analytics/answer/9304153",
         description: "Official Google checklist for GA4 implementation",
+      },
+      {
+        title: "Google Campaign URL Builder",
+        url: "https://ga-dev-tools.google/campaign-url-builder/",
+        description: "Build properly formatted UTM-tagged URLs for any campaign",
+      },
+      {
+        title: "PageSpeed Insights",
+        url: "https://pagespeed.web.dev",
+        description: "Check Core Web Vitals and page speed for any URL",
+      },
+    ],
+  },
+  {
+    category: "Learning",
+    links: [
+      {
+        title: "Google Analytics Academy",
+        url: "https://analytics.google.com/analytics/academy/",
+        description: "Free courses on GA4 from Google — beginner to advanced",
+      },
+      {
+        title: "Measure School (YouTube)",
+        url: "https://www.youtube.com/@MeasureSchool",
+        description: "Practical GA4 and GTM tutorials from one of the best educators in the space",
+      },
+      {
+        title: "Simo Ahava's Blog",
+        url: "https://www.simoahava.com",
+        description: "The deepest technical resource on GTM and GA4 implementation",
       },
     ],
   },
