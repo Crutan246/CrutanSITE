@@ -15,9 +15,23 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crutan for Solo Founders — AI Analytics Briefings",
+  title: "Crutan for Solo Founders — AI Analytics Briefings That Run Themselves",
   description:
     "You built the product, run the marketing, handle support, and still need to understand your analytics. Crutan delivers a plain-English briefing to your inbox every morning so you can lead your business without living in dashboards.",
+  keywords: [
+    "analytics for founders",
+    "solo founder analytics",
+    "simple analytics for startups",
+    "GA4 for founders",
+    "daily analytics email for founders",
+    "startup analytics tool",
+  ],
+  alternates: { canonical: "https://crutan.com/for/founders" },
+  openGraph: {
+    title: "Crutan for Solo Founders — AI Analytics Briefings",
+    description: "Know what's happening in your business every morning without opening a dashboard.",
+    url: "https://crutan.com/for/founders",
+  },
 };
 
 const pains = [

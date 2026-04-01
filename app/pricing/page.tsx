@@ -13,6 +13,8 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { track } from "@/lib/gtm";
 import { useScrollDepth } from "@/hooks/use-scroll-depth";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqJsonLd } from "@/lib/seo/jsonld";
 
 const faqItems = [
   {
@@ -90,8 +92,13 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function PricingPage() {
   useScrollDepth();
+  const pricingFaqSchema = faqJsonLd(
+    faqItems.map((item) => ({ question: item.q, answer: item.a }))
+  );
+
   return (
     <div className="min-h-screen bg-parchment">
+      <JsonLd data={pricingFaqSchema} />
       <Nav />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}

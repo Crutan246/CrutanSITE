@@ -3,6 +3,19 @@ import Link from "next/link";
 import { ArrowRight, Shield, Zap, Heart, Target } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Crutan — Making Google Analytics Actually Useful",
+  description:
+    "Crutan was built because Google Analytics is powerful but unusable for most business owners. We're making analytics accessible with AI-powered daily briefings in plain English.",
+  alternates: { canonical: "https://crutan.com/about" },
+  openGraph: {
+    title: "About Crutan",
+    description: "Making Google Analytics actually useful for non-technical business owners.",
+    url: "https://crutan.com/about",
+  },
+};
 
 const values = [
   {

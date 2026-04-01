@@ -16,9 +16,23 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crutan for Vibe Coders & Indie Hackers — Know If It's Working",
+  title: "Crutan for Vibe Coders & Indie Hackers — Know If Your App Is Working",
   description:
-    "You shipped your app. Now find out if anyone cares. Crutan connects to your GA4 and delivers a daily briefing telling you exactly what's happening — active users, retention, top landing pages, and whether your SEO is compounding.",
+    "You shipped your app. Now find out if anyone cares. Crutan connects to your GA4 and delivers a daily briefing — active users, retention, top pages, and whether your growth is compounding.",
+  keywords: [
+    "indie hacker analytics",
+    "app analytics for developers",
+    "simple analytics for side projects",
+    "GA4 for indie hackers",
+    "startup metrics dashboard alternative",
+    "vibe coder analytics",
+  ],
+  alternates: { canonical: "https://crutan.com/for/vibe-coders" },
+  openGraph: {
+    title: "Crutan for Vibe Coders & Indie Hackers",
+    description: "You shipped it. Now find out if it's working — without becoming a dashboard person.",
+    url: "https://crutan.com/for/vibe-coders",
+  },
 };
 
 const pains = [

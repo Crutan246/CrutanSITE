@@ -17,9 +17,24 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crutan for Agencies — Client Reporting That Writes Itself",
+  title: "Crutan for Agencies — Client Analytics Reporting That Writes Itself",
   description:
-    "Stop spending hours creating client reports that clients don't read. Crutan delivers AI-powered analytics briefings in plain English — giving your clients daily visibility into their performance while your team focuses on strategy.",
+    "Stop spending hours on client reports they skim in 3 minutes. Crutan delivers AI-powered daily analytics briefings to your clients automatically — they stay informed, your team focuses on strategy.",
+  keywords: [
+    "agency analytics reporting",
+    "automated client reports",
+    "white label analytics",
+    "agency GA4 reporting tool",
+    "client reporting automation",
+    "analytics for agencies",
+    "digital agency reporting tool",
+  ],
+  alternates: { canonical: "https://crutan.com/for/agencies" },
+  openGraph: {
+    title: "Crutan for Agencies — Client Reporting That Writes Itself",
+    description: "Give every client daily analytics intelligence. Save hours on reporting. Retain clients longer.",
+    url: "https://crutan.com/for/agencies",
+  },
 };
 
 const pains = [

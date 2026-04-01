@@ -1,0 +1,63 @@
+# Crutan — AI Analytics Briefings
+
+> Crutan is an AI-powered analytics tool that connects to Google Analytics 4 and Google Search Console, then delivers plain-English daily briefings to business owners via email or SMS. It turns complex GA4 data into actionable insights — no dashboards, no data science, just answers.
+
+## What Crutan Does
+
+Crutan reads your Google Analytics 4 data overnight and writes a personalized briefing that arrives in your inbox every morning. The briefing explains what happened on your website yesterday, what it means for your business, and exactly what to do about it.
+
+### Core Features
+
+- **Daily AI Briefings**: A plain-English summary of your website analytics delivered every morning — sessions, conversions, top pages, traffic sources, anomalies, and 1–3 specific action items.
+- **Live Chat with Your Data**: Ask questions about your analytics in natural language and get answers grounded in your actual GA4 data. "Why did my traffic drop?" "What's my best converting page?" "How did organic search perform this month?"
+- **Google Search Console Integration**: See which keywords drive impressions, clicks, and rankings. Track SEO performance week over week without logging into Search Console.
+- **Weekly Rollup Reports**: Every Friday, a comprehensive 7-day summary with trends, wins, areas of concern, and prioritized recommendations for the following week.
+- **Business Context Personalization**: During onboarding, you tell Crutan about your industry, revenue model, audience, and KPIs. Every briefing is written through that lens — not generic analytics jargon, but observations relevant to your specific business.
+- **Multi-Channel Delivery**: Choose email, SMS, or both. Pick your delivery time and timezone.
+- **Read-Only Access**: Crutan only requests read access to your data. Nothing is modified, shared, or used to train AI models.
+
+## Who Crutan Is For
+
+- **Solo founders and small business owners** who don't have time to learn GA4 but need to understand their website performance.
+- **Indie hackers and app developers** who shipped a product and need to know if it's gaining traction without becoming dashboard experts.
+- **Ecommerce store owners** who need daily visibility into revenue, conversion rates, and channel performance.
+- **Digital agencies** that want to give clients daily analytics briefings without spending hours on manual reporting.
+
+## How It Works
+
+1. **Connect**: Sign in with Google. Crutan requests read-only access to your GA4 property and (optionally) Search Console. Takes under 5 minutes.
+2. **Personalize**: A quick AI-guided conversation captures your business context — industry, revenue model, audience, KPIs.
+3. **Receive**: Your first briefing arrives the next morning, written specifically for your business.
+
+## Pricing
+
+Crutan is currently in free early access. No credit card required. All features are available at no cost. Early access users will receive grandfathered pricing when paid plans launch.
+
+## Technical Details
+
+- **Website**: https://crutan.com
+- **App**: https://app.crutan.com
+- **Data Sources**: Google Analytics 4, Google Search Console
+- **AI Model**: Claude by Anthropic
+- **Delivery**: Email (via Resend), SMS (via Twilio)
+- **Hosting**: Vercel
+- **Security**: OAuth 2.0 with read-only scopes, SOC 2 compliance in progress
+
+## Key Pages
+
+- Homepage: https://crutan.com
+- Pricing: https://crutan.com/pricing
+- Blog: https://crutan.com/blog
+- Resources: https://crutan.com/resources
+- For Solo Founders: https://crutan.com/for/founders
+- For Vibe Coders: https://crutan.com/for/vibe-coders
+- For Ecommerce: https://crutan.com/for/ecommerce
+- For Agencies: https://crutan.com/for/agencies
+- Google Analytics for Small Business Guide: https://crutan.com/google-analytics-for-small-business
+- AI Analytics Guide: https://crutan.com/ai-analytics
+- Comparisons: https://crutan.com/compare
+
+## Contact
+
+- Website: https://crutan.com
+- Support: support@crutan.com

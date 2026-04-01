@@ -4,6 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { getAllPosts } from "@/lib/blog";
 import { BlogClickTracker } from "@/components/blog-click-tracker";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Crutan Blog — Google Analytics Tips, AI Analytics, and Growth Strategies",
+  description:
+    "Practical guides on Google Analytics 4, AI-powered analytics, SEO fundamentals, and growth strategies for small business owners and founders. Learn how to turn data into decisions.",
+  alternates: { canonical: "https://crutan.com/blog" },
+  openGraph: {
+    title: "Crutan Blog — Analytics Made Simple",
+    description: "Practical guides on GA4, AI analytics, and growth strategies for business owners.",
+    url: "https://crutan.com/blog",
+  },
+};
 
 const categoryColors: Record<string, string> = {
   Analytics: "bg-action/10 text-action",

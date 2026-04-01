@@ -17,9 +17,24 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crutan for Ecommerce — Daily AI Briefings for Store Owners",
+  title: "Crutan for Ecommerce — Daily AI Briefings for Online Store Owners",
   description:
-    "Stop guessing why your revenue changed. Crutan connects to your GA4 and delivers a daily plain-English briefing explaining what drove your sales, which channels are converting, and what to do before you open the store.",
+    "Stop guessing why your revenue changed. Crutan connects to your GA4 and delivers a daily plain-English briefing — what drove sales, which channels convert, and what to do before you open the store.",
+  keywords: [
+    "ecommerce analytics",
+    "shopify analytics alternative",
+    "daily revenue report",
+    "ecommerce GA4 reports",
+    "online store analytics",
+    "automated ecommerce reporting",
+    "AI analytics for ecommerce",
+  ],
+  alternates: { canonical: "https://crutan.com/for/ecommerce" },
+  openGraph: {
+    title: "Crutan for Ecommerce — Stop Guessing Why Revenue Changed",
+    description: "Know what drove yesterday's sales every morning — revenue by channel, conversion rate, and what to do next.",
+    url: "https://crutan.com/for/ecommerce",
+  },
 };
 
 const pains = [

@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import { BlogPostTracker } from "@/components/blog-post-tracker";
 import { SignupButton } from "@/components/signup-button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonld";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -21,8 +23,18 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} — Crutan Blog`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `https://crutan.com/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `https://crutan.com/blog/${post.slug}`,
+      publishedTime: post.date,
+      authors: [post.author],
+      section: post.category,
+    },
   };
 }
 
@@ -133,6 +145,23 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-parchment">
+      <JsonLd
+        data={articleJsonLd({
+          title: post.title,
+          excerpt: post.excerpt,
+          date: post.date,
+          author: post.author,
+          slug: post.slug,
+          category: post.category,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://crutan.com" },
+          { name: "Blog", url: "https://crutan.com/blog" },
+          { name: post.title, url: `https://crutan.com/blog/${post.slug}` },
+        ])}
+      />
       <BlogPostTracker postTitle={post.title} postSlug={post.slug} postCategory={post.category} />
       <Nav />
 

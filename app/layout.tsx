@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { AttributionCapture } from "@/components/analytics/AttributionCapture";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  organizationJsonLd,
+  websiteJsonLd,
+  softwareApplicationJsonLd,
+} from "@/lib/seo/jsonld";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -20,17 +26,33 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Crutan — AI Analytics Briefings for Non-Technical Business Owners",
+  title: {
+    default: "Crutan — AI Analytics Briefings | Google Analytics Made Simple",
+    template: "%s | Crutan",
+  },
   description:
-    "Google Analytics made simple. Crutan connects to your GA4 account and delivers a plain-English AI briefing every morning — telling you what happened, what it means, and what to do. Free during early access.",
+    "Crutan connects to your Google Analytics 4 and delivers a plain-English AI briefing every morning — what happened, what it means, and what to do. Free during early access.",
   keywords: [
-    "AI analytics for small business",
+    "AI analytics",
     "Google Analytics made simple",
     "GA4 daily briefing",
     "analytics for non-technical founders",
     "automated analytics report",
     "GA4 AI summary",
+    "AI analytics briefing",
+    "google analytics for small business",
+    "GA4 alternative",
+    "simple analytics tool",
+    "AI website analytics",
+    "daily analytics email",
+    "google analytics AI",
+    "automated GA4 reports",
+    "analytics for founders",
+    "ecommerce analytics",
   ],
+  alternates: {
+    canonical: "https://crutan.com",
+  },
   icons: {
     icon: [
       {
@@ -71,6 +93,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
+      <head>
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={softwareApplicationJsonLd()} />
+      </head>
       <GoogleTagManager gtmId="GTM-W389LNPC" />
       <body className="antialiased">
         <AttributionCapture />

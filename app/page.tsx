@@ -25,6 +25,7 @@ import { Footer } from "@/components/footer";
 import { DataSwarm } from "@/components/data-swarm";
 import { track } from "@/lib/gtm";
 import { useScrollDepth } from "@/hooks/use-scroll-depth";
+import { HomepageSchema } from "./homepage-schema";
 
 const sampleQuestions = [
   "Why did my traffic drop last week?",
@@ -226,6 +227,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-parchment">
+      <HomepageSchema />
       <Nav />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
