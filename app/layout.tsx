@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { AttributionCapture } from "@/components/analytics/AttributionCapture";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -71,7 +72,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
       <GoogleTagManager gtmId="GTM-W389LNPC" />
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <AttributionCapture />
+        {children}
+      </body>
     </html>
   );
 }
