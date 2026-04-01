@@ -1,20 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const footerLinks = {
+const footerColumns: Record<string, { label: string; href: string }[]> = {
   Product: [
     { label: "Features", href: "/#features" },
     { label: "How It Works", href: "/#how-it-works" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Compare Tools", href: "/compare" },
     { label: "Changelog", href: "/blog" },
   ],
-  Resources: [
+  Solutions: [
+    { label: "Solo Founders", href: "/for/founders" },
+    { label: "Vibe Coders", href: "/for/vibe-coders" },
+    { label: "Ecommerce", href: "/for/ecommerce" },
+    { label: "Agencies", href: "/for/agencies" },
+  ],
+  Learn: [
+    { label: "GA4 for Small Business", href: "/google-analytics-for-small-business" },
+    { label: "What Is AI Analytics?", href: "/ai-analytics" },
     { label: "Blog", href: "/blog" },
     { label: "Resources", href: "/resources" },
     { label: "FAQ", href: "/pricing#faq" },
-    { label: "About", href: "/about" },
   ],
-  Legal: [
+  Company: [
+    { label: "About", href: "/about" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
   ],
@@ -24,7 +33,7 @@ export function Footer() {
   return (
     <footer className="bg-bark text-parchment/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center group mb-4">
@@ -55,7 +64,7 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
+          {Object.entries(footerColumns).map(([category, links]) => (
             <div key={category}>
               <h3 className="text-xs font-semibold uppercase tracking-widest text-parchment/40 mb-4">
                 {category}
