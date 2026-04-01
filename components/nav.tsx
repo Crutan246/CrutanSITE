@@ -31,8 +31,8 @@ const solutionsLinks = [
   },
   {
     label: "Agencies",
-    href: "/for/agencies",
-    description: "Client reporting that writes itself",
+    href: "/agency",
+    description: "One login, every client, zero manual reports",
   },
 ];
 

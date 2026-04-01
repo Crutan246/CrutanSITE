@@ -56,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Pillar pages ────────────────────────────────────────────────────────
     {
+      url: `${BASE_URL}/agency`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/google-analytics-for-small-business`,
       lastModified: new Date(),
       changeFrequency: "monthly",

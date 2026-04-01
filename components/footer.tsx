@@ -13,11 +13,12 @@ const footerColumns: Record<string, { label: string; href: string }[]> = {
     { label: "Solo Founders", href: "/for/founders" },
     { label: "Vibe Coders", href: "/for/vibe-coders" },
     { label: "Ecommerce", href: "/for/ecommerce" },
-    { label: "Agencies", href: "/for/agencies" },
+    { label: "Agencies", href: "/agency" },
   ],
   Learn: [
     { label: "GA4 for Small Business", href: "/google-analytics-for-small-business" },
     { label: "What Is AI Analytics?", href: "/ai-analytics" },
+    { label: "Crutan for Agencies", href: "/agency" },
     { label: "Blog", href: "/blog" },
     { label: "Resources", href: "/resources" },
     { label: "FAQ", href: "/pricing#faq" },
